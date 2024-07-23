@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+     
+      let a = 34;
+      a = "let keyword is redefined ";
+      a = 455 + 8;
+      //Numbers
+      //Object
+      //String
+      //Boolean - true or false
+      //undefined
+      //null
+      function hello() {
+        console.log("hey Harry");
+      }
+      hello();
+      let Obja = {
+        r: 34,
+        m: 64,
+        func: function myfunc(number) {
+          console.log("The number is " + number);
+        },
+      };
+
+      Obja.func(45);
+
+      console.log(a);
+      document.addEventListener("click", function click() {
+        console.log("The heading is clicked");
+        alert("The heading is clicked");
+        if (confirm("are you sure ")) {
+          console.log("Yes the user is sure");
+        } else {
+          console.log("No the user is not sure ");
+        }
+      });
+
+      let arr=['h','a','r','r','y']
+
+      arr.forEach(element=>{})
+
+
+    let myfunc=(number)=>(console.log("The number is "+this))
+
+
+    //callback 
+
+    setTimeout(() => {
+        console.log("yaay")
+        
+    },4000);
+    console.log("I am lower script of yaay")
+    </script>
+  </head>
+  <body>
+    <h1>I am learning javascript</h1>
+    19.75 hours average content in react ..
+  </body>
+</html>
