@@ -109,31 +109,40 @@ const output1 = numbers.reduce((prev, current) => {
     return prev;
   }
 });
- 
-console.log(output1) // 9 is the largest number in the array
 
+console.log(output1); // 9 is the largest number in the array
 
 //we are given the array of marks of the students filer out teh marks of the students that scored 90+
 
-let marks=[34,56,78,90,91,97,99,12]
-console.log(marks.filter(val=>{return val>90}))
+let marks = [34, 56, 78, 90, 91, 97, 99, 12];
+console.log(
+  marks.filter((val) => {
+    return val > 90;
+  })
+);
 
-//take a number n as input from the user . create an array of numbers from the 1 to n 
+//take a number n as input from the user . create an array of numbers from the 1 to n
 //use the reduce method to calculate the sum of all numbers in the array . use the reduce method to calculat the product of all numbers in the array
 
-let n=26
+let n = 26;
 
-//creating the array from the number n 
-let userarray=[]
-for (let i=1;i<=n;i++)
-{
-    userarray[i]=i
+//creating the array from the number n
+let userarray = [];
+for (let i = 1; i <= n; i++) {
+  userarray[i] = i;
 }
-let sum=userarray.reduce((prev,curr)=>{return prev+curr})
-console.log(sum)
+let sum = userarray.reduce((prev, curr) => {
+  return prev + curr;
+});
+console.log(sum);
 
-let product=userarray.reduce((prev,curr)=>{prev=prev*curr
-    return prev
-})
+let product = userarray.reduce((prev, curr) => {
+  prev = prev * curr;
+  return prev;
+});
 
-console.log(product)
+console.log(product);
+
+
+//prev is fixed at the first element 
+//while current pointer iterates from the second element to the length of the array. 
