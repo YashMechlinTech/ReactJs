@@ -14,3 +14,21 @@ console.log(window.document) //window giving error in the vs code but in browser
 //dom is an tree structure of the html document and each component is called the node .
 
 // window->document->html ->Head,body, etc..
+//window object represents an open window in an browser . it is browser object & is automatically created by the browser
+//it is a global object with lots of properties and methods
+// in js the html act as an object and hence to manipulate the data of the html by js is done by the predefined methods  like th innerHTML and like attribute ..etx..
+
+
+//console.log() actually print the things into the console
+
+//console.dir() is basically used for the printing the properties and methods of the object 
+
+
+//console.log(window.document) is actually equal to the console.log(document)
+
+
+console.log(document.body)
+
+// document.body.style.backgroundColor="green"
+
+document.body.childNodes[2].innerText="Hello this is the edited text"
