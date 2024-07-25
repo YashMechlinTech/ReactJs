@@ -1,0 +1,15 @@
+#box {
+  border: 1px solid red;
+  margin: 12px;
+  padding: 30px;
+  font: 12px;
+  display: flex;
+  background-color: dodgerblue;
+  color: black;
+}
+
+.para{
+    color: navajowhite;
+    background-color: green;
+
+}
