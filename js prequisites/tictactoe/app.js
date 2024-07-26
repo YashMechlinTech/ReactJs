@@ -20,14 +20,21 @@ boxes.forEach((box) => {
     if (turnO) {
       box.innerText = "O";
       turnO = false;
+      checkWinner();
     } else {
       box.innerText = "X";
       turnO = true;
+      checkWinner();
     }
     box.disabled = true;
-
-    checkWinner();
   });
+  box.addEventListener("mouseover", () => {
+    box.style.backgroundColor = "#ADD8E6";
+  });
+  box.addEventListener("mouseout", () => {
+    box.style.backgroundColor = "white";
+  });
+  
 });
 
 const checkWinner = () => {
@@ -40,10 +47,10 @@ const checkWinner = () => {
       if (pos1 == pos2 && pos2 == pos3) {
         if (pos1 == "X") {
           setTimeout("alert('player X is winner ');", 1);
-          return;
+          location.reload();
         } else {
-          setTimeout("alert('player O is winner ');", 1); //
-          return;
+          setTimeout("alert('player O is winner ');", 1);
+          location.reload();
         }
       }
     }
@@ -53,3 +60,12 @@ const checkWinner = () => {
 resetbutton.addEventListener("click", () => {
   location.reload();
 });
+
+resetbutton.addEventListener("mouseover", () => {
+    resetbutton.style.backgroundColor='#ADD8E6'
+  });
+  resetbutton.addEventListener("mouseout", () => {
+    resetbutton.style.backgroundColor='white'
+  });
+  
+  
