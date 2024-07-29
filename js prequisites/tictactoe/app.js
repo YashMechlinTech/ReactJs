@@ -19,13 +19,22 @@ boxes.forEach((box) => {
   box.addEventListener("click", () => {
     if (turnO) {
       box.innerText = "O";
+      count=count+1
       turnO = false;
-      checkWinner();
+      
     } else {
       box.innerText = "X";
+      count=count+1
       turnO = true;
-      checkWinner();
+      
     }
+     if(count!=9)
+     {
+        checkWinner();
+     }
+     else{
+        alert(`game has been draw!`)
+     }
     box.disabled = true;
   });
   box.addEventListener("mouseover", () => {
@@ -34,7 +43,6 @@ boxes.forEach((box) => {
   box.addEventListener("mouseout", () => {
     box.style.backgroundColor = "white";
   });
-  
 });
 
 const checkWinner = () => {
@@ -62,10 +70,8 @@ resetbutton.addEventListener("click", () => {
 });
 
 resetbutton.addEventListener("mouseover", () => {
-    resetbutton.style.backgroundColor='#ADD8E6'
-  });
-  resetbutton.addEventListener("mouseout", () => {
-    resetbutton.style.backgroundColor='white'
-  });
-  
-  
+  resetbutton.style.backgroundColor = "#ADD8E6";
+});
+resetbutton.addEventListener("mouseout", () => {
+  resetbutton.style.backgroundColor = "white";
+});
