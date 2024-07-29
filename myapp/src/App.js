@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import User from './User'
 
 function App() {
   return (
@@ -16,7 +17,9 @@ function App() {
           rel="noopener noreferrer"
         >
           Hello world !
+          
         </a>
+        <User/>
       </header>
     </div>
   );
