@@ -47,7 +47,7 @@ body.prepend(newheading)
 
 
 
-//to removve any element in the document 
+//to remove any element in the document 
 let para=document.querySelector("div")
 // para.remove()
 
