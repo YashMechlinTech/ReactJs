@@ -69,3 +69,5 @@ divs[0].innerText=divs[0].innerText+" Unique text one"
 divs[1].innerText=divs[1].innerText+" Unique text two"
 divs[2].innerText=divs[2].innerText+" Unique text three"
 
+// or else we can use the method like for each 
+

@@ -3,5 +3,7 @@
     "auto-rename-tag.activationOnLanguage": [
         
         "*"
-    ]
+    ],
+    "editor.inlineSuggest.suppressSuggestions": false,
+    "emmet.showSuggestionsAsSnippets": true
 }

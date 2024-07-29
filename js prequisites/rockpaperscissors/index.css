@@ -1,0 +1,67 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+h1 {
+  background-color: black;
+  color: white;
+  height: 5rem;
+  line-height: 5rem; /*to set the text in center */
+}
+
+.choice {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  justify-content: center;
+  align-content: center;
+}
+img {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  /* to look better and fit in container */
+  border-radius: 50%;
+}
+
+.choices {
+  /*all three images lie in choices container */
+  display: flex;
+  /* To bring them all in one line and for aligning them vertically and horizontally just use the justify content center*/
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 5rem;
+}
+
+.score-board {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  align-items: center;
+  font-size: 9vh;
+
+  
+
+}
+
+.choice:hover {
+  /* on hovering the opacity becomes faded and we can chose the cursor to be changed to pointer */
+  opacity: 50%;
+  cursor: pointer;
+  background-color: rgb(132, 15, 204);
+
+}
+.msg-container{
+    margin-top: 3rem;
+}
+#message{
+    font-size: 8vh;
+    background-color: black;
+    color: white;
+    display: inline;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
