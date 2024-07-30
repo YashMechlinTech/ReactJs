@@ -1,5 +1,5 @@
 {
-    "editor.fontFamily": "IBM Plex Mono",
+    "editor.fontFamily": "Cascadia Code",
     "auto-rename-tag.activationOnLanguage": [
         
         "*"
