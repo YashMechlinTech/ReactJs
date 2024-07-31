@@ -19,7 +19,7 @@ function App() {
 
     if (charAlllowed) str += '~!@#$%^&*()_+<>?"{}';
 
-    for (let i = 1; i <= str.length; i++) {
+    for (let i = 1; i <=length; i++) {
       let char = Math.floor(Math.random() * str.length + 1);
       pass = pass + str.charAt(char); //passwordgenreated
     }
