@@ -5,5 +5,9 @@
         "*"
     ],
     "editor.inlineSuggest.suppressSuggestions": false,
-    "emmet.showSuggestionsAsSnippets": true
+    "emmet.showSuggestionsAsSnippets": true,
+    "files.associations": {
+        "*.css": "tailwindcss"
+    },
+    "workbench.editor.enablePreview": false
 }
