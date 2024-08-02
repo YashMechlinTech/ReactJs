@@ -1,0 +1,50 @@
+Basic Syntax and Operators:
+
+Variables (let, const, var)
+Data types (strings, numbers, booleans, arrays, objects)
+Operators (arithmetic, comparison, logical)
+Functions:
+
+Function declarations and expressions
+Arrow functions
+Understanding this keyword
+Higher-order functions (callback functions)
+ES6 Features:
+
+Template literals
+Destructuring assignments
+Spread and rest operators
+Default parameters
+Modules (import/export)
+Object-Oriented Programming:
+
+Prototypes and inheritance
+Classes and constructors
+Encapsulation
+Asynchronous JavaScript:
+
+Callbacks
+Promises
+Async/await
+DOM Manipulation:
+
+Selecting elements
+Event handling
+Modifying the DOM (creating, updating, removing elements)
+JSON:
+
+Understanding JSON format
+Fetching data and working with APIs
+Basic understanding of Functional Programming:
+
+Pure functions
+Immutability
+First-class functions
+Error Handling:
+
+try/catch statements
+Custom error handling
+Development Tools:
+
+Familiarity with browser developer tools
+Basic understanding of package managers (npm/yarn)
