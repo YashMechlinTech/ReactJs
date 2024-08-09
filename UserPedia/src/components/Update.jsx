@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router";
 
 function Update() {
-  const { id } = useParams(); 
+  const { id } = useParams();
   //returns the id
   const allusers = useSelector((state) => state.app.users);
   console.log(allusers);
@@ -69,7 +69,7 @@ function Update() {
           </label>
         </div>
 
-        <button type="submit" className="btn btn-primary" navigate="/read" >
+        <button type="submit" className="btn btn-primary" navigate="/read">
           Submit
         </button>
       </form>
