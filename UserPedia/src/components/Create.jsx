@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { createuser } from "../Features/UserDetailsSlice";
 import { useNavigate } from "react-router";
 const Create = () => {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   const [users, setUsers] = useState({});
   const getUserData = (e) => {
     setUsers({ ...users, [e.target.name]: e.target.value });
@@ -12,16 +12,14 @@ const Create = () => {
 
   //creating dispatch to send data to api through the handle submit button function
   const dispatch = useDispatch();
-  
 
   const handleSubmit = (e) => {
     console.log(users);
-    e.preventDefault(); //prevents the page from loading again 
-    dispatch(createuser(users));  //this function is dispatched from the userdetails slice 
-    navigate('/read')
-  
+    e.preventDefault(); //prevents the page from loading again
+    dispatch(createuser(users)); //this function is dispatched from the userdetails slice
+    navigate("/read");
   };
-  //set the value of new users 
+  //set the value of new users
   return (
     <div className="my-2">
       <h2>Fill the Data in Form</h2>

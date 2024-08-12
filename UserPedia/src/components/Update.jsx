@@ -1,26 +1,46 @@
-import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router";
+import { updateUser } from "../Features/UserDetailsSlice";
 
-function Update() {
+const Update = () => {
   const { id } = useParams();
-  //returns the id
-  const allusers = useSelector((state) => state.app.users);
-  console.log(allusers);
-  const singleuser = allusers.filter((ele) => ele.id === id);
-  console.log(singleuser);
+  const [updateData, setUpdateData] = useState();
+  const { users, loading } = useSelector((state) => state.app);
+  const navigate = useNavigate();
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (users) {
+      const singleuser = users.filter((ele) => ele.id === id);
+      setUpdateData(singleuser[0]);
+    }
+  }, []);
+
+  const newData = (e) => {
+    setUpdateData({ ...updateData, [e.target.name]: e.target.value }); //old value and new value added .
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(updateUser(updateData));
+    navigate("/read");
+  };
+
+  console.log(updateData);
+
   return (
     <div className="my-2">
-      <h2>Edit the in Form</h2>
-      <form className="w-50 p-3">
+      <h2>Fill the Data in Form</h2>
+      <form className="w-50 p-3" onSubmit={handleSubmit}>
         <div className="mb-3">
           <label className="form-label">Name</label>
           <input
             type="text"
             name="name"
             className="form-control"
-            value={singleuser[0].name}
-            //   onChange={getUserData}
+            value={updateData && updateData.name}
+            onChange={newData}
           />
         </div>
         <div className="mb-3">
@@ -28,9 +48,9 @@ function Update() {
           <input
             type="text"
             name="email"
-            //   onChange={getUserData}
+            onChange={newData}
             className="form-control"
-            value={singleuser[0].email}
+            value={updateData && updateData.email}
           />
         </div>
         <div className="mb-3">
@@ -38,9 +58,9 @@ function Update() {
           <input
             type="text"
             name="age"
-            //   onChange={getUserData}
+            onChange={newData}
             className="form-control"
-            value={singleuser[0].age}
+            value={updateData && updateData.age}
           />
         </div>
 
@@ -50,7 +70,8 @@ function Update() {
             type="radio"
             name="gender"
             value="male"
-            //   onChange={getUserData}
+            checked={updateData && updateData.gender === "male"}
+            onChange={newData}
           />
           <label className="form-check-label" htmlFor="flexRadioDefault1">
             Male
@@ -62,19 +83,20 @@ function Update() {
             name="gender"
             value="female"
             type="radio"
-            //   onChange={getUserData}
+            checked={updateData && updateData.gender === "female"}
+            onChange={newData}
           />
           <label className="form-check-label" htmlFor="flexRadioDefault2">
             Female
           </label>
         </div>
 
-        <button type="submit" className="btn btn-primary" navigate="/read">
+        <button type="submit" className="btn btn-primary">
           Submit
         </button>
       </form>
     </div>
   );
-}
+};
 
 export default Update;

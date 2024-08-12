@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { createElement } from "react";
 //creating action outside the slicer
 
 export const createuser = createAsyncThunk(
@@ -22,11 +21,34 @@ export const createuser = createAsyncThunk(
   }
 );
 
+//updateUser
+export const updateUser = createAsyncThunk(
+  "updateUser",
+  async (data, { rejectWithValue }) => {
+    console.log(data);
+    const response = await fetch(
+      `https://66b5065e9f9169621ea53c09.mockapi.io/Userpedia/${data.id}`,
+      {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      }
+    );
+    try {
+      const result = await response.json();
+      return result;
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  }
+);
+
 //reading opereation by default fetch api has the get method involved .
 
 export const showUser = createAsyncThunk(
   "showUser",
   async (_, { rejectWithValue }) => {
+    //_ is used .
     const response = await fetch(
       "https://66b5065e9f9169621ea53c09.mockapi.io/Userpedia"
     );
@@ -106,12 +128,26 @@ export const userDetail = createSlice({
       .addCase(deleteUser.fulfilled, (state, action) => {
         state.loading = false;
         const { id } = action.payload;
-        if (id) { //if id found or let's say data come then 
-          state.users = state.users.filter((ele) => ele.id !== id); //send those data where element.id != id 
+        if (id) {
+          //if id found or let's say data come then
+          state.users = state.users.filter((ele) => ele.id !== id); //send those data where element.id != id
         }
         // Logging the users to console
       })
       .addCase(deleteUser.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      })
+      .addCase(updateUser.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(updateUser.fulfilled, (state, action) => {
+        state.loading = false;
+        state.users = state.users.map((ele) =>
+          ele.id === action.payload.id ? action.payload : ele
+        );
+      })
+      .addCase(updateUser.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
       });
@@ -119,3 +155,6 @@ export const userDetail = createSlice({
 });
 
 export default userDetail.reducer;
+
+//exporting it and it will be used in the store
+//like reducers app:userDetail

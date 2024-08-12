@@ -23,7 +23,8 @@ const Read = () => {
         }}
       >
         {users.map((ele) => (
-          <div key={ele.id}
+          <div
+            key={ele.id}
             className="card"
             style={{ width: "18rem", display: "flex", alignItems: "center" }}
           >
@@ -33,14 +34,14 @@ const Read = () => {
               <h6 className="card-text">{ele.email}</h6>
               <h6 className="card-text">{ele.gender}</h6>
             </div>
-            <div className="card-actions" >
-                <Link to={`/edit/${ele.id}`}> Edit </Link>
-                <button  onClick={()=>dispatch(deleteUser(ele.id))} >Delete</button>
-              </div>
+            <div className="card-actions">
+              <Link to={`/edit/${ele.id}`}> Edit </Link>
+              <button onClick={() => dispatch(deleteUser(ele.id))}>
+                Delete
+              </button>
+            </div>
           </div>
         ))}
-         
-        
       </div>
     </>
   );

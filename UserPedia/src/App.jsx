@@ -11,9 +11,9 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Create />} />
-          <Route path="/read" element={<Read/>} />
-         <Route path="/edit/:id" element={<Update/>}/>  
+          <Route exact path="/" element={<Create />} />
+          <Route exact path="/read" element={<Read />} />
+          <Route exact path="edit/:id" element={<Update />} />
         </Routes>
       </BrowserRouter>
     </>
@@ -22,5 +22,4 @@ function App() {
 
 export default App;
 
-
-//   edit/:id dyanamic page 
+//   edit/:id dyanamic page
