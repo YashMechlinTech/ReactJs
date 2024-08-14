@@ -1,5 +1,5 @@
 {
-    "editor.fontFamily": "Cascadia Code",
+    "editor.fontFamily": "Fira Code",
     "auto-rename-tag.activationOnLanguage": [
         
         "*"
