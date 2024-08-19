@@ -1,5 +1,5 @@
 {
-    "editor.fontFamily": "Fira Code",
+    "editor.fontFamily": "JetBrains Mono",
     "auto-rename-tag.activationOnLanguage": [
         
         "*"
@@ -9,5 +9,6 @@
     "files.associations": {
         "*.css": "tailwindcss"
     },
-    "workbench.editor.enablePreview": false
+    "workbench.editor.enablePreview": false,
+    "editor.mouseWheelZoom": false
 }
