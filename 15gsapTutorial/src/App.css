@@ -18,19 +18,19 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+.rectangle {
+  background-color: rgb(3, 118, 194);
+  color: rgb(3, 118, 194);
+  width: 80px;
+  height: 80px;
+  margin-right: auto;
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+  line-height: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  
 }
 
 .card {
@@ -39,4 +39,13 @@
 
 .read-the-docs {
   color: #888;
+}
+
+
+.circle{
+  width: 80px;
+  height:80px;
+  background-color: aquamarine;
+  border-radius:40%;
+
 }
